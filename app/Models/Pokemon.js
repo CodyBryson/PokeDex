@@ -7,7 +7,7 @@ export default class Pokemon {
     this.description = data.description
     this.weight = data.weight
     this.height = data.height
-    this.types = data.types.type
+    this.types = data.types[0].type.name
     this.sprites = data.sprites.front_default
   }
   get Template() {
@@ -15,9 +15,8 @@ export default class Pokemon {
     <h4 class="text-center" style="text-transform:uppercase">${this.name}</h4>
                 <img src="${this.img}"
                     width="250" height="250" alt="" srcset="">
-                <p><b>Type:</b> ${this.types}</p>
+                <p><b>Type:</b> <span style="text-transform:uppercase">${this.types}</span></p>
                 <p><b>Height:</b> ${this.height} inches | <b>Weight:</b> ${this.weight} lbs</p>
-                <p><b>Description:</b> "${this.description}" </p>
                 <button class="btn btn-outline-success" onclick="app.myPokemonController.addPokemon()">Add Pokemon</button>
     
     

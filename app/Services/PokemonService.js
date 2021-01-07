@@ -4,7 +4,7 @@ import { descriptionApi, pokemonApi } from "./AxiosService.js"
 
 class PokemonService {
   async getAllPokemon() {
-    let res = await pokemonApi.get('pokemon?limit=100')
+    let res = await pokemonApi.get('pokemon?limit=151')
     ProxyState.pokemon = res.data.results
   }
   async getPokemon(name) {
